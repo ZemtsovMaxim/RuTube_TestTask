@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Notifier</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Birthday Notifier</h1>
+
+        <!-- Employee List -->
+        <div class="section">
+            <h2>Employees</h2>
+            <ul id="employee-list"></ul>
+        </div>
+
+        <!-- Subscription Management -->
+        <div class="section">
+            <h2>Manage Subscriptions</h2>
+            <input type="number" id="employee-id" placeholder="Employee ID">
+            <button onclick="subscribe()">Subscribe</button>
+            <button onclick="unsubscribe()">Unsubscribe</button>
+        </div>
+
+        <!-- Notification Settings -->
+        <div class="section">
+            <h2>Notification Settings</h2>
+            <input type="time" id="notification-time" placeholder="Notification Time">
+            <button onclick="setNotificationTime()">Set Notification Time</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
