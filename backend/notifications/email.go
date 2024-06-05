@@ -1,10 +1,11 @@
 package notifications
 
 import (
-	"birthday-notifier/models"
 	"fmt"
 	"log"
 	"net/smtp"
+
+	"github.com/ZemtsovMaxim/RuTube_TestTask/backend/models"
 )
 
 type EmailConfig struct {

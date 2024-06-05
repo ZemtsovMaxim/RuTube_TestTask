@@ -1,12 +1,14 @@
 package main
 
 import (
-	"birthday-notifier/handlers"
-	"birthday-notifier/models"
-	"birthday-notifier/notifications"
 	"log"
 	"net/http"
 	"time"
+
+	"github.com/ZemtsovMaxim/RuTube_TestTask/backend/models"
+	"github.com/ZemtsovMaxim/RuTube_TestTask/backend/notifications"
+
+	"github.com/ZemtsovMaxim/RuTube_TestTask/backend/handlers"
 
 	"github.com/gorilla/mux"
 )
@@ -19,6 +21,11 @@ var users = []models.User{
 var subscriptions = []models.Subscription{
 	{UserID: 1, EmployeeID: 1},
 	{UserID: 2, EmployeeID: 2},
+}
+
+var employees = []models.Employee{
+	{ID: 1, Name: "John Doe", BirthDate: "1990-03-25", Email: "john@example.com"},
+	{ID: 2, Name: "Jane Smith", BirthDate: "1985-06-10", Email: "jane@example.com"},
 }
 
 func main() {
@@ -59,7 +66,7 @@ func main() {
 
 func checkBirthdays() {
 	today := time.Now().Format("2006-01-02")
-	for _, employee := range handlers.employees {
+	for _, employee := range employees {
 		if employee.BirthDate == today {
 			for _, subscription := range subscriptions {
 				if subscription.EmployeeID == employee.ID {

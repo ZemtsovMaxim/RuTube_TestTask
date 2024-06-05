@@ -1,9 +1,10 @@
 package handlers
 
 import (
-	"birthday-notifier/models"
 	"encoding/json"
 	"net/http"
+
+	"github.com/ZemtsovMaxim/RuTube_TestTask/backend/models"
 )
 
 var employees = []models.Employee{
